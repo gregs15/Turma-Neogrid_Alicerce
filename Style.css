@@ -1,0 +1,39 @@
+
+
+header {
+
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.logo img {
+    max-width: 200px;
+    height: auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav li {
+    margin: 0 15px;
+}
+
+nav a {
+    text-decoration: none;
+    color:black;
+    font-weight: bold;
+}
+
+
+.card{
+    display: flex;
+    justify-content: space-between;
+    height: 100vh
+}
+
+
