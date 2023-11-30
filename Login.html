@@ -1,38 +1,64 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>
-        <title></title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="css/Style.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.min.js"></script>
-        <script src="js/main.js"></script>
-        <script src="data.json"></script>
-    </head>
-    <body>
-       <div class="background-image">
-        <div class="row-login">
-             <h4 class="text-center text-black">Login</h4>
-                <form id="loginForm" class="form-horizontal" role="form" onsubmit="Login()">
-                    <input type="hidden" id="ReturnUrl" />
-                    <div class="form-group">
-                        <label for="username" class="form-label">Usuário</label>
-                        <input type="username"  id="username" class="form-control" placeholder="Digite o seu nome" name="username" required/>
-                        <div class="valid-feedback">Válido</div>
-                        <div class="invalid-feedback">Por favor, preencha esse campo!</div>
-                    </div>
-                    <div class="form-group" style="margin-top: 30px;">
-                        <label for="password" class="form-label">Senha</label>
-                        <input type="password" id="password" class="form-control" placeholder="Digite sua senha"  name="password" required/>
-                        <div class="valid-feedback">Válido</div>
-                        <div class="invalid-feedback">Por favor, preencha esse campo!</div>
-                    </div>
-                    <div class="form-group text-center">
-                        <input type="submit" class="btn btn-success" value="Login" style="width: 150px; height: 40px; margin-top: 30px;" />
-                    </div>
-                </form>
-            </div>
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/Login.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="data.json"></script>
+    <script src="https://kit.fontawesome.com/cf6fa412bd.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="logo"><img src="image/logo.jpg"></div>
+        <div class="nav-container">
+            <nav>
+                <ul>
+                    <li><a href="Index.html">Inicio</a></li>
+                    <li><a href="#Sobre">Sobre</a></li>
+                    <li><a href="#Cardápio">Cardápio</a></li>
+                    <li><a href="Login.html">Login</a></li>
+                </ul>
+            </nav>
         </div>
-    </body>
+    </header>
+    <div class="background-image">
+    <div class="container" style="max-width: 45%;">
+        <div class="buttonsForm">
+          <div class="btnColor"></div>
+          <button id="btnSignin">Entrar</button>
+          <button id="btnSignup">Cadastrar</button>
+        </div>
+    
+        <form id="signin" class="active login-form" onsubmit="Login()">
+          <input type="text" placeholder="Email" required />
+          <i class="fas fa-envelope iEmail"></i>
+          <input type="password" placeholder="Senha" required />
+          <i class="fas fa-lock iPassword"></i>
+          <div class="divCheck">
+            <input type="checkbox" style="margin-top: 10px;" />
+            <span>Lembrar Senha</span>
+          </div>
+          <button type="submit">Entrar</button>
+        </form>
+    
+        <form id="signup" class="form-hidden cadastro-form" onsubmit="Cadastro()">
+          <input type="text" placeholder="Email" required />
+          <i class="fas fa-envelope iEmail2"></i>
+          <input type="password" placeholder="Senha" required />
+          <i class="fas fa-lock iPassword2"></i>
+          <input type="password" placeholder="Senha" required />
+          <i class="fas fa-lock iPassword3"></i>
+          <div class="divCheck">
+            <input type="checkbox" required />
+            <span>Termos</span>
+          </div>
+          <button type="submit">Cadastrar</button>
+        </form>
+    </div>
+    </div>
+</body>
 </html>

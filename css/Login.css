@@ -1,0 +1,175 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+.background-image {
+    background-image: url('../image/Restaurante.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.text-black {
+    color: black;
+}
+
+.container {
+    background-color: whitesmoke;
+    padding: 6px;
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 0 20px 0 darkgrey;
+}
+
+.buttonsForm {
+    margin-top: 40px;
+    position: relative;
+    border-radius: 30px;
+    box-shadow: 0 0 7px 0 blueviolet;
+}
+
+.buttonsForm button {
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    position: relative;
+    padding: 10px 29px;
+}
+
+.btnColor {
+    position: absolute;
+    width: 120px;
+    height: 100%;
+    background: linear-gradient(to right, #5956e9, #a963f8);
+    border-radius: 30px;
+    transition: .3s;
+}
+
+input[type="text"],
+input[type="password"] {
+    border: none;
+    margin-top: 10px;
+    border-radius: 60px;
+    padding: 8px 0 8px 35px;
+    outline: none;
+    width: 100%;
+}
+
+button[type="submit"] {
+    background: #660fc8;
+    color: white;
+    border-radius: 30px;
+    width: 70%;
+    border: none;
+    outline: none;
+    padding: 8px 0 8px 15px;
+    font-size: 15px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.divCheck {
+    margin: 10px 0 0 5px;
+    width: 80%;
+    font-size: 13px;
+}
+
+.login-form{
+    position: relative;
+    margin: 0;
+    transition: .5s;
+    margin-right: 50px;
+    width: 300px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    opacity: 0; 
+    pointer-events: none;
+}
+
+.cadastro-form{
+    position: absolute;
+    margin-top: 80px;
+    margin-left:125px;
+    transition: .5s;
+    padding: 0;
+    width: 300px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    opacity: 0; 
+    pointer-events: none;
+}
+
+#signin {
+    left: 25px;
+    
+}
+
+#signup {
+    left: 450px;
+}
+
+.iEmail,
+.iPassword {
+    position:relative;
+    top:-28px;
+    left:-130px;
+}
+
+.iPassword2, .iPassword3,.iEmail2 {
+    position: relative;
+    top:-28px;
+    left:-130px;
+}
+
+.header {
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.header .logo img {
+    max-width: 130px;
+    height: auto;
+}
+
+.header nav ul {
+    list-style: none;
+    display: flex;
+}
+
+.header nav li {
+    margin: 0 80px;
+}
+
+.header nav a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+
+form.active {
+    opacity: 1;
+    pointer-events: initial;
+}
