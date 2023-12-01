@@ -23,47 +23,72 @@ document.addEventListener("DOMContentLoaded", function () {
         formSignup.classList.add('active');
     });
 });
-function Login() {
-    const userName = document.getElementById("username").value;
-    const password = document.getElementById("password").value;
 
-   
-    if(!userName || !password){
-        alert("Preencha todos os campos necessários");
-        return;
-    }
-
-
-    if (json && json.Usuarios) {
-        const user = json.Usuarios.find(u => u.username === userName && u.password === password);
-
-        if (user) {
-            alert("Login realizado com sucesso");
-            window.location.href = "https://google.com";
-        } else {
-            alert("Usuário não encontrado, favor tentar novamente");
-            window.location.href = "Login.html";
-        }
-    } else {
-        console.error('"Usuarios" não encontrados.');
-    }
-}
-
-
-const xhr = new XMLHttpRequest();
-xhr.onreadystatechange = function () {
-    if (xhr.readyState === 4) {
-        if (xhr.status === 200) {
-            try {
-                json = JSON.parse(xhr.responseText);
-            } catch (error) {
-                console.error('Erro:', error);
+document.addEventListener("DOMContentLoaded",function(){
+    const signIn = document.getElementById("signin");
+ 
+    signIn.addEventListener("submit", function(event) {
+        event.preventDefault();
+ 
+        const xhr = new XMLHttpRequest();
+        xhr.open("GET", "data.json", true);
+ 
+        xhr.onload = function(){
+            if (xhr.status === 200) {
+                const responseData = JSON.parse(xhr.responseText)
+                const email = document.getElementById("signin-email").value;
+                const password = document.getElementById("signin-password").value;
+ 
+                const users = responseData.Usuarios;
+ 
+                const foundUser = users.find(user => user["signin-email"] === email && user["signin-password"] === password);
+ 
+                if (foundUser !== undefined){
+                    alert("Login realizado com sucesso!");
+                    window.location.href = "Index.html";
+                }
+                else{
+                    alert("Credencias invalidas, por favor tente novamente!");
+                }
             }
-        } else {
-            console.error('Erro,  Status:', xhr.status);
         }
-    }
-};
+        xhr.send()
+    })
+})
 
-xhr.open('GET', 'data.json', true);
-xhr.send();
+document.addEventListener("DOMContentLoaded",function(){
+    const signUp = document.getElementById("signup");
+ 
+    signUp.addEventListener("submit", function(event) {
+        event.preventDefault();
+ 
+        const xhr = new XMLHttpRequest();
+        xhr.open("GET", "data.json", true);
+ 
+        xhr.onload = function(){
+            if (xhr.status === 200) {
+                const responseData = JSON.parse(xhr.responseText)
+                const email = document.getElementById("signup-email").value;
+                const password = document.getElementById("signup-password").value;
+                const password2 = document.getElementById("signup-password2").value;
+ 
+                if (password !== password2) {
+                    alert("As senhas não coincidem. Por favor, digite novamente.");
+                    return;
+                }
+                const users = responseData.Cadastro;
+ 
+                const foundUser = users.find(user => user["signup-email"] === email && user["signup-password"] === password  && user["signup-password2"] === password2);
+ 
+                if (foundUser !== undefined){
+                    alert("Cadastro realizado com sucesso!");
+                    window.location.href = "Login.html";
+                }
+                else{
+                    alert("Credencias invalidas, por favor tente novamente!");
+                }
+            }
+        }
+        xhr.send()
+    })
+})

@@ -1,13 +1,29 @@
 {
-    "Usuarios":[
+    "Usuarios": [
         {
-            "username":"admin",
-            "password":"admin"
+            "signin-email":"admin@localhost.com",
+            "signin-password":"admin"
         },
 
         {
-            "username":"teste",
-            "password":"123"
+            "signin-email":"teste@teste.com",
+            "signin-password":"123"
+        }
+    ],
+
+    "Cadastro": [
+        {
+            "signup-email":"admin@localhost.com",
+            "signup-password":"admin",
+            "signup-password2": "admin"
+          
+        },
+
+        {
+            "signup-email":"teste@teste.com",
+            "signup-password":"123",
+            "signup-password2": "123"
+            
         }
     ]
 }
